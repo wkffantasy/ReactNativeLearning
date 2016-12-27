@@ -7,14 +7,34 @@
 import React, { Component } from 'react';
 import {
   View,
+  InteractionManager,
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
 import  MarqueeTextView from '../Reusable/MarqueeText';
 
 export default class MarqueeTextDemoView extends Component {
 
   componentWillMount() {
     console.log('MarqueeText componentWillMount');
+    InteractionManager.runAfterInteractions(() => {
+      this._refreshNav();
+    });
+  }
+  _refreshNav() {
+    const info = {
+      renderTitle : () => { this._renderTitleView(); }
+    };
+    Actions.refresh(info);
+  }
+  _renderTitleView() {
+    return (
+      <MarqueeTextView
+        title={'海天连线的地方是那夕阳，木造的甲板一整遍是那金黄，你背光的轮廓就像剪影一样'}
+        titleStyle={{ color:'red',fontSize:10 }}
+        style={{ marginLeft:40,marginRight:40,height:14 }}
+      />
+    );
   }
 
   render() {
