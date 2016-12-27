@@ -18,6 +18,8 @@ import LearningRN from './Component/LearningRN/LearningRN';
 import LearingJS from './Component/LearningJS/LearningJS';
 import Mine from './Component/Mine/Mine';
 
+import MarqueeTextDemoView from './Component/Mine/MarqueeTextDemoView';
+
 const TabBarItem = () => props => (
   <View style={{ alignItems:'center', paddingTop:4 }}>
     <Text style={[{ marginTop:6 }, props && props.selected ? { color:'#00b5e9' } : { color:'#999999' }, { fontSize:11,marginBottom:4 }]} >
@@ -39,6 +41,7 @@ export default class ReactNativeLearning extends Component {
           </Scene>
           <Scene key="tab2" title="我的" icon={TabBarItem({ title:'222' })}>
             <Scene key="Mine" component={Mine} title="Mine" initial={true} />
+            <Scene key="MarqueeTextDemoView" component={MarqueeTextDemoView} hideTabBar />
           </Scene>
 
         </Scene>
@@ -46,24 +49,5 @@ export default class ReactNativeLearning extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('ReactNativeLearning', () => ReactNativeLearning);

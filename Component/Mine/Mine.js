@@ -12,7 +12,7 @@ const dataArray = [
   {
     title:'跑马灯',
     introduce:'主要是每一个view的导航条title文字过长时，可以滑动来看全文字。',
-    key:'',
+    key:'MarqueeTextDemoView',
   },
 ];
 const ds = new ListView.DataSource({
@@ -29,7 +29,9 @@ export default class Mine extends Component {
     };
   }
   _clickCell(rowData) {
-
+    console.log('_clickCell rowData==',rowData);
+    console.log('rowData.key ==',rowData.key);
+    Actions[rowData.key]();
   }
   _renderRow(rowData,sectionId,rowId) {
     console.log('rowData ==',rowData);
