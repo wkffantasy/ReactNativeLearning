@@ -14,6 +14,7 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 import  MarqueeTextView from '../Reusable/MarqueeText';
+import NavBar from '../Reusable/NavBar';
 
 const { width:ScreenW, height:ScreenH } = Dimensions.get('window');
 
@@ -25,23 +26,12 @@ export default class MarqueeTextDemoView extends Component {
     //   this._refreshNav();
     // });
   }
-  _refreshNav() {
-    const info = {
-      title : 'MarqueeText',
-      titleStyle :{
-        color:'#333333',
-        fontSize:20,
-        width: ScreenW - 110,
-        marginLeft:55,
-        height:22,
-      },
-      navigationBarStyle:{
-        borderBottomWidth:1,
-      },
-      // navBar:this._renderNavBar(),
-    };
-    Actions.refresh(info);
-  }
+  // _refreshNav() {
+  //   const info = {
+  //     navBar:{ NavBar },
+  //   };
+  //   Actions.refresh(info);
+  // }
 
   _renderTitleView() {
     return (

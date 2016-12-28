@@ -8,7 +8,7 @@ import {
 
 export default class LearningRN extends Component {
   static propTypes = {
-    rowData:PropTypes.Object,
+    rowData:PropTypes.object,
     onPress:PropTypes.func,
   };
 

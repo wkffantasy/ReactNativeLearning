@@ -19,6 +19,7 @@ import LearingJS from './Component/LearningJS/LearningJS';
 import Mine from './Component/Mine/Mine';
 
 import MarqueeTextDemoView from './Component/Mine/MarqueeTextDemoView';
+import AnimateImagesDemoView from './Component/Mine/AnimateImagesDemoView';
 
 const TabBarItem = () => props => (
   <View style={{ alignItems:'center', paddingTop:4 }}>
@@ -42,6 +43,7 @@ export default class ReactNativeLearning extends Component {
           <Scene key="tab2" title="我的" icon={TabBarItem({ title:'222' })}>
             <Scene key="Mine" component={Mine} title="Mine" initial={true} />
             <Scene key="MarqueeTextDemoView" component={MarqueeTextDemoView} hideTabBar />
+            <Scene key="AnimateImagesDemoView" component={AnimateImagesDemoView} hideTabBar />
           </Scene>
 
         </Scene>
