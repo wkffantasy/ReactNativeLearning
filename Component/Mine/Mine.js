@@ -19,6 +19,11 @@ const dataArray = [
     introduce:'播放多张图片，连起来像一个gif图似的。比如下载的时候下载的动画，播放语音播放的动画等。',
     key:'AnimateImagesDemoView',
   },
+  {
+    title:'SVG画图',
+    introduce:'用的react-native-svg画的各种图',
+    key:'SVGViews',
+  },
 ];
 const ds = new ListView.DataSource({
   rowHasChanged :(r1,r2) => r1 !== r2,
@@ -34,14 +39,11 @@ export default class Mine extends Component {
     };
   }
   _clickCell(rowData) {
-    console.log('_clickCell rowData==',rowData);
-    console.log('rowData.key ==',rowData.key);
     if (rowData.key.length !== 0) {
       Actions[rowData.key]();
     }
   }
   _renderRow(rowData,sectionId,rowId) {
-    console.log('rowData ==',rowData);
     return (
       <IntroduceCell
         rowData={rowData}

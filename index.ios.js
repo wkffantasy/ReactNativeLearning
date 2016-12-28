@@ -20,6 +20,7 @@ import Mine from './Component/Mine/Mine';
 
 import MarqueeTextDemoView from './Component/Mine/MarqueeTextDemoView';
 import AnimateImagesDemoView from './Component/Mine/AnimateImagesDemoView';
+import SVGViews from './Component/Mine/SVGViews';
 
 const TabBarItem = () => props => (
   <View style={{ alignItems:'center', paddingTop:4 }}>
@@ -44,6 +45,7 @@ export default class ReactNativeLearning extends Component {
             <Scene key="Mine" component={Mine} title="Mine" initial={true} />
             <Scene key="MarqueeTextDemoView" component={MarqueeTextDemoView} hideTabBar />
             <Scene key="AnimateImagesDemoView" component={AnimateImagesDemoView} hideTabBar />
+            <Scene key="SVGViews" component={SVGViews} hideTabBar />
           </Scene>
 
         </Scene>
