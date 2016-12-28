@@ -20,9 +20,14 @@ const dataArray = [
     key:'AnimateImagesDemoView',
   },
   {
-    title:'SVG画图',
+    title:'SVG画图的view',
     introduce:'用的react-native-svg画的各种图',
     key:'SVGViews',
+  },
+  {
+    title:'获取手机设备信息的view',
+    introduce:'桥接OC 来获取手机设备的一些信息',
+    key:'DeviceInfoView',
   },
 ];
 const ds = new ListView.DataSource({

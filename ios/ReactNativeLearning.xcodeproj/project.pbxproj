@@ -25,6 +25,7 @@
 		28B744DB1EB9415B9452B44F /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B58724C045416B9B5C6187 /* libRNSVG.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,8 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
+		9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
 		D25887406ED146A79CCDF240 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		D5B58724C045416B9B5C6187 /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,6 +318,7 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeLearning */ = {
 			isa = PBXGroup;
 			children = (
+				9A6C64ED1E13E0BA0053CC5A /* native-modules-ios */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -408,6 +412,15 @@
 				9A6C64EC1E13D6B10053CC5A /* libRNSVG.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9A6C64ED1E13E0BA0053CC5A /* native-modules-ios */ = {
+			isa = PBXGroup;
+			children = (
+				9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */,
+				9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */,
+			);
+			path = "native-modules-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -728,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
