@@ -8,25 +8,41 @@ import React, { Component } from 'react';
 import {
   View,
   InteractionManager,
+  Dimensions,
+  Text,
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
 import  MarqueeTextView from '../Reusable/MarqueeText';
 
+const { width:ScreenW, height:ScreenH } = Dimensions.get('window');
+
 export default class MarqueeTextDemoView extends Component {
 
   componentWillMount() {
     console.log('MarqueeText componentWillMount');
-    InteractionManager.runAfterInteractions(() => {
-      this._refreshNav();
-    });
+    // InteractionManager.runAfterInteractions(() => {
+    //   this._refreshNav();
+    // });
   }
   _refreshNav() {
     const info = {
-      renderTitle : () => { this._renderTitleView(); }
+      title : 'MarqueeText',
+      titleStyle :{
+        color:'#333333',
+        fontSize:20,
+        width: ScreenW - 110,
+        marginLeft:55,
+        height:22,
+      },
+      navigationBarStyle:{
+        borderBottomWidth:1,
+      },
+      // navBar:this._renderNavBar(),
     };
     Actions.refresh(info);
   }
+
   _renderTitleView() {
     return (
       <MarqueeTextView
