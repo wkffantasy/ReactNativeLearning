@@ -38,6 +38,7 @@ export default class DeviceInfoView extends Component {
     InteractionManager.runAfterInteractions(() => {
       this._addListener();
       this._getDeviceId();
+      this._getDeviceInfo();
       // this._getAppNotificationStatus();
     });
   }
@@ -47,13 +48,61 @@ export default class DeviceInfoView extends Component {
   _addListener() {
     this.appStateChangeHandler = (state) => {
       if (state === 'active') {
-        this._getAppNotificationStatus();
+        // this._getAppNotificationStatus();
         console.log('app enter foreground');
       } else {
         console.log('app enter background');
       }
     };
     AppState.addEventListener('change', this.appStateChangeHandler);
+  }
+
+  _getDeviceCarrier() {
+    DeviceInfoManager.getDeviceCarrier((carrierName,netType) => {
+      console.log('getDeviceCarrier carrierName ==',carrierName);
+      console.log('getDeviceCarrier netType==',netType);
+    });
+  }
+  _getDeviceScreenResolution() {
+    DeviceInfoManager.getDeviceScreenResolution((width,height) => {
+      console.log('getDeviceScreenResolution width ==',width);
+      console.log('getDeviceScreenResolution height==',height);
+    });
+  }
+  _getDeviceInfo() {
+    DeviceInfoManager.getDeviceInfo((name,model,localizedModel,systemName,systemVersion) => {
+      console.log('getDeviceInfo name==',name);
+      console.log('getDeviceInfo model==',model);
+      console.log('getDeviceInfo localizedModel==',localizedModel);
+      console.log('getDeviceInfo systemName==',systemName);
+      console.log('getDeviceInfo systemVersion==',systemVersion);
+      this.dataArray.push(
+        {
+          text:`设备的名字==${name}`,
+          key:'deviceName',
+        },
+        {
+          text:`设备是iPhone还是iPod touch 等等，这个设备是==${model}`,
+          key:'deviceModel',
+        },
+        {
+          text:`the localizedModel of this device is==${localizedModel}`,
+          key:'deviceLocalizedModel',
+        },
+        {
+          text:`设备的系统==${systemName}`,
+          key:'deviceSystemName',
+        },
+        {
+          text:`设备当前的版本号==${systemVersion}`,
+          key:'deviceSystemVersion',
+        },
+    );
+      this.setState({
+        ...this.state,
+        dataSource : ds.cloneWithRows(this.dataArray),
+      });
+    });
   }
   _getDeviceId() {
     DeviceInfoManager.getDeviceId((status,responseText) => {
