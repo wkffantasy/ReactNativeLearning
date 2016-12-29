@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  View,
   ListView,
 } from 'react-native';
 
