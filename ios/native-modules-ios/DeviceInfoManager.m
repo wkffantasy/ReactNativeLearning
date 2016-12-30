@@ -129,7 +129,7 @@ RCT_EXPORT_METHOD(getDeviceCarrier:(RCTResponseSenderBlock)callback)
 
 }
 #pragma 获取电池的相关信息
-RCT_EXPORT_METHOD(getDeviceBatterStatus:(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(getDeviceBatteryStatus:(RCTResponseSenderBlock)callback)
 {
   if (callback) {
     callback(@[
@@ -157,26 +157,38 @@ RCT_EXPORT_METHOD(getDeviceBatterStatus:(RCTResponseSenderBlock)callback)
 }
 
 #pragma app打开一个网页
-RCT_EXPORT_METHOD(openWeb:(NSString*)webString)
+RCT_EXPORT_METHOD(openWeb:(NSString*)webString
+                  callBack:(RCTResponseSenderBlock)callback)
 {
-//  NSString *url = @"www.apple.com";
-  if (webString.length==0) {
+  NSLog(@"openWeb webString==%@",webString);
+  [self openURL:webString callBack:callback];
+  
+}
+- (void)openURL:(NSString*)string callBack:(RCTResponseSenderBlock)callback{
+  if (string.length==0) {
     return;
   }
-  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:webString]];
+  NSURL * url =[NSURL URLWithString:string];
+  BOOL canOpen = [[UIApplication sharedApplication] canOpenURL:url];
+  if (canOpen) {
+    [[UIApplication sharedApplication] openURL:url];
+  } else {
+    callback(@[@"can not open this",string]);
+  }
+  
 }
+
 #pragma app打开另一个app
 /*
  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://10086"]];
  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto://devprograms@apple.com"]];
  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"sms://10086"]];
  */
-RCT_EXPORT_METHOD(openAnother:(NSString*)appString)
+RCT_EXPORT_METHOD(openAnotherApp:(NSString*)appString
+                  callBack:(RCTResponseSenderBlock)callback)
 {
-  if (appString.length==0) {
-    return;
-  }
-  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appString]];
+  NSLog(@"openAnotherApp webString==%@",appString);
+  [self openURL:appString callBack:callback];
 
 }
 
