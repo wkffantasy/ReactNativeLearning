@@ -56,7 +56,7 @@ export default class DeviceInfoView extends Component {
       {
         text:'设备打开一个网页 比如百度',
         key:'deviceOpenWeb',
-        onPress:() => { this._openWeb('www.baidu.com'); },
+        onPress:() => { this._openWeb('http://www.baidu.com'); },
       },
       {
         text:'设备打开另一个app 比如打电话',
