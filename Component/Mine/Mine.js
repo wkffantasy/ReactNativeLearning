@@ -28,6 +28,11 @@ const dataArray = [
     introduce:'桥接OC 来获取手机设备的一些信息',
     key:'DeviceInfoView',
   },
+  {
+    title:'存储数据',
+    introduce:'用react-native-storage来做一些存储，更详细的信息在https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md',
+    key:'StorageForAppView',
+  },
 ];
 const ds = new ListView.DataSource({
   rowHasChanged :(r1,r2) => r1 !== r2,
