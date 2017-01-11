@@ -33,6 +33,11 @@ const dataArray = [
     introduce:'用react-native-storage来做一些存储，更详细的信息在https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md',
     key:'StorageForAppView',
   },
+  {
+    title:'下载的一个类',
+    introduce:'用OC的下载，桥接到RN上，支持显示下载速度，剩余时间等。封装的一个js的下载tool',
+    key:'DownloadDemoView',
+  },
 ];
 const ds = new ListView.DataSource({
   rowHasChanged :(r1,r2) => r1 !== r2,

@@ -26,6 +26,13 @@
 		58EEADA30C3F41C19F32C92E /* libRNAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC800AE2B25141B2946856E1 /* libRNAudio.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		9A0400A61E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04009C1E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.m */; };
+		9A0400A71E264BEE004E6353 /* TYDownLoadDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A04009E1E264BEE004E6353 /* TYDownLoadDataManager.m */; };
+		9A0400A81E264BEE004E6353 /* TYDownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400A11E264BEE004E6353 /* TYDownLoadModel.m */; };
+		9A0400A91E264BEE004E6353 /* TYDownloadSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400A31E264BEE004E6353 /* TYDownloadSessionManager.m */; };
+		9A0400AA1E264BEE004E6353 /* TYDownloadUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400A51E264BEE004E6353 /* TYDownloadUtility.m */; };
+		9A0400AD1E264C01004E6353 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AC1E264C01004E6353 /* ViewController.m */; };
+		9A0400B01E265204004E6353 /* DownloadToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AF1E265204004E6353 /* DownloadToolManager.m */; };
 		9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */; };
 		F4583F9E658541CB8E2AF535 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 025DFF9AD3C34F6DB1C5ECC9 /* libRNFS.a */; };
 /* End PBXBuildFile section */
@@ -219,6 +226,21 @@
 		73FC5B423C2E473F97501171 /* RNFS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		9A04009B1E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+TYCorrectedResumeData.h"; sourceTree = "<group>"; };
+		9A04009C1E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+TYCorrectedResumeData.m"; sourceTree = "<group>"; };
+		9A04009D1E264BEE004E6353 /* TYDownLoadDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDownLoadDataManager.h; sourceTree = "<group>"; };
+		9A04009E1E264BEE004E6353 /* TYDownLoadDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDownLoadDataManager.m; sourceTree = "<group>"; };
+		9A04009F1E264BEE004E6353 /* TYDownloadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDownloadDelegate.h; sourceTree = "<group>"; };
+		9A0400A01E264BEE004E6353 /* TYDownLoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDownLoadModel.h; sourceTree = "<group>"; };
+		9A0400A11E264BEE004E6353 /* TYDownLoadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDownLoadModel.m; sourceTree = "<group>"; };
+		9A0400A21E264BEE004E6353 /* TYDownloadSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDownloadSessionManager.h; sourceTree = "<group>"; };
+		9A0400A31E264BEE004E6353 /* TYDownloadSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDownloadSessionManager.m; sourceTree = "<group>"; };
+		9A0400A41E264BEE004E6353 /* TYDownloadUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDownloadUtility.h; sourceTree = "<group>"; };
+		9A0400A51E264BEE004E6353 /* TYDownloadUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDownloadUtility.m; sourceTree = "<group>"; };
+		9A0400AB1E264C01004E6353 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9A0400AC1E264C01004E6353 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9A0400AE1E265204004E6353 /* DownloadToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadToolManager.h; sourceTree = "<group>"; };
+		9A0400AF1E265204004E6353 /* DownloadToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadToolManager.m; sourceTree = "<group>"; };
 		9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
 		9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
 		C105EE7968184A6A9BB57797 /* RNAudio.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAudio.xcodeproj; path = "../node_modules/react-native-audio/ios/RNAudio.xcodeproj"; sourceTree = "<group>"; };
@@ -430,6 +452,36 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9A0400831E264BB8004E6353 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				9A0400AE1E265204004E6353 /* DownloadToolManager.h */,
+				9A0400AF1E265204004E6353 /* DownloadToolManager.m */,
+				9A0400AB1E264C01004E6353 /* ViewController.h */,
+				9A0400AC1E264C01004E6353 /* ViewController.m */,
+				9A04009A1E264BEE004E6353 /* TYDownloadManager */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		9A04009A1E264BEE004E6353 /* TYDownloadManager */ = {
+			isa = PBXGroup;
+			children = (
+				9A04009B1E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.h */,
+				9A04009C1E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.m */,
+				9A04009D1E264BEE004E6353 /* TYDownLoadDataManager.h */,
+				9A04009E1E264BEE004E6353 /* TYDownLoadDataManager.m */,
+				9A04009F1E264BEE004E6353 /* TYDownloadDelegate.h */,
+				9A0400A01E264BEE004E6353 /* TYDownLoadModel.h */,
+				9A0400A11E264BEE004E6353 /* TYDownLoadModel.m */,
+				9A0400A21E264BEE004E6353 /* TYDownloadSessionManager.h */,
+				9A0400A31E264BEE004E6353 /* TYDownloadSessionManager.m */,
+				9A0400A41E264BEE004E6353 /* TYDownloadUtility.h */,
+				9A0400A51E264BEE004E6353 /* TYDownloadUtility.m */,
+			);
+			path = TYDownloadManager;
+			sourceTree = "<group>";
+		};
 		9A6C64D51E13D6B10053CC5A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +493,7 @@
 		9A6C64ED1E13E0BA0053CC5A /* native-modules-ios */ = {
 			isa = PBXGroup;
 			children = (
+				9A0400831E264BB8004E6353 /* Download */,
 				9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */,
 				9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */,
 			);
@@ -803,9 +856,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A0400AD1E264C01004E6353 /* ViewController.m in Sources */,
 				9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */,
+				9A0400A91E264BEE004E6353 /* TYDownloadSessionManager.m in Sources */,
+				9A0400A61E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.m in Sources */,
+				9A0400A81E264BEE004E6353 /* TYDownLoadModel.m in Sources */,
+				9A0400B01E265204004E6353 /* DownloadToolManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				9A0400A71E264BEE004E6353 /* TYDownLoadDataManager.m in Sources */,
+				9A0400AA1E264BEE004E6353 /* TYDownloadUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

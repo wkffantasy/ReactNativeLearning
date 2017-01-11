@@ -49,6 +49,7 @@ export default class StorageForAppView  extends Component {
   }
   componentWillUmmount() {
     this.timer && clearTimeout(this.timer);
+    console.log('StorageForAppView componentWillUmmount');
   }
   _toDelete() {
     // 清除某个key下的所有数据
