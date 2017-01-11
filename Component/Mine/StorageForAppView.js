@@ -6,18 +6,15 @@
 
 import React, { Component } from 'react';
 import {
-  View,
   InteractionManager,
-  Dimensions,
   Text,
   ScrollView,
   AsyncStorage,
 } from 'react-native';
 
-// import { Actions } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 import Storage from 'react-native-storage';
 
-// const { width:ScreenW, height:ScreenH } = Dimensions.get('window');
 const storage = new Storage({
   // 最大容量，默认值1000条数据循环存储
   size: 1000,
@@ -132,6 +129,12 @@ export default class StorageForAppView  extends Component {
       }
     });
   }
+  _clickToWeb() {
+    console.log('_clickToWeb');
+    Actions.WebTipView({
+      webString:'https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md',
+    });
+  }
   render() {
     return (
       <ScrollView
@@ -142,6 +145,9 @@ export default class StorageForAppView  extends Component {
           关于更多的信息，请看github地址。
           https://github.com/sunnylqm/react-native-storage/blob/master/README-CHN.md
           `}
+        </Text>
+        <Text onPress={() => { this._clickToWeb(); }} style={{ marginTop:40,fontSize:30,color:'#333333' }}>
+          {'点击我进入react-native-storage的详细介绍'}
         </Text>
       </ScrollView>
     );
