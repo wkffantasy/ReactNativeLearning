@@ -24,6 +24,9 @@ import SVGViews from './Component/Mine/SVGViews';
 import DeviceInfoView from './Component/Mine/GetDeviceInfoView';
 import StorageForAppView from './Component/Mine/StorageForAppView';
 
+// common
+import WebTipView from './Common/Component/WebTipView';
+
 const TabBarItem = () => props => (
   <View style={{ alignItems:'center', paddingTop:4 }}>
     <Text style={[{ marginTop:6 }, props && props.selected ? { color:'#00b5e9' } : { color:'#999999' }, { fontSize:11,marginBottom:4 }]} >
@@ -50,6 +53,8 @@ export default class ReactNativeLearning extends Component {
             <Scene key="SVGViews" component={SVGViews} hideTabBar />
             <Scene key="DeviceInfoView" component={DeviceInfoView} hideTabBar />
             <Scene key="StorageForAppView" component={StorageForAppView} hideTabBar />
+
+            <Scene key="WebTipView" component={WebTipView} hideTabBar />
           </Scene>
 
         </Scene>
