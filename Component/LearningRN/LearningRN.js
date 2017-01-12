@@ -13,6 +13,11 @@ const dataArray = [
     introduce:'ActivityIndicator的属性',
     key:'ActivityIndicatorView',
   },
+  {
+    title:'RN组件学习~~Image',
+    introduce:'Image',
+    key:'ImageLearningView',
+  },
 ];
 const ds = new ListView.DataSource({
   rowHasChanged :(r1,r2) => r1 !== r2,

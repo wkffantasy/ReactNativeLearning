@@ -20,6 +20,7 @@ import Mine from './Component/Mine/Mine';
 
 // LearningRN
 import ActivityIndicatorView from './Component/LearningRN/ActivityIndicatorView';
+import ImageLearningView from './Component/LearningRN/ImageLearningView';
 
 // Mine
 import MarqueeTextDemoView from './Component/Mine/MarqueeTextDemoView';
@@ -48,6 +49,7 @@ export default class ReactNativeLearning extends Component {
           <Scene key="tab0" title="RN学习" icon={TabBarItem({ title:'RN学习' })}>
             <Scene key="LearningRN" component={LearningRN} title="RN学习" initial={true} />
             <Scene key="ActivityIndicatorView" component={ActivityIndicatorView} hideTabBar />
+            <Scene key="ImageLearningView" component={ImageLearningView} hideTabBar />
           </Scene>
           <Scene key="tab1" title="JS学习" icon={TabBarItem({ title:'111' })}>
             <Scene key="LearingJS" component={LearingJS} title="LearingJS" initial={true} />
