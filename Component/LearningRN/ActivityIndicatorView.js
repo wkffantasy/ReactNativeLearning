@@ -53,6 +53,7 @@ export default class ActivityIndicatorView extends Component {
           {`
             ActivityIndicator的demo
             hidesWhenStopped只支持iOS，而且必须animating属性为false才能起作用
+            size是枚举，iOS只有small和large。安卓的话可以传一个number来控制他的大小
             `}
         </Text>
         <ActivityIndicator
