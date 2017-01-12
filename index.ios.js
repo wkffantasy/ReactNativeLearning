@@ -18,6 +18,10 @@ import LearningRN from './Component/LearningRN/LearningRN';
 import LearingJS from './Component/LearningJS/LearningJS';
 import Mine from './Component/Mine/Mine';
 
+// LearningRN
+import ActivityIndicatorView from './Component/LearningRN/ActivityIndicatorView';
+
+// Mine
 import MarqueeTextDemoView from './Component/Mine/MarqueeTextDemoView';
 import AnimateImagesDemoView from './Component/Mine/AnimateImagesDemoView';
 import SVGViews from './Component/Mine/SVGViews';
@@ -43,6 +47,7 @@ export default class ReactNativeLearning extends Component {
         <Scene initial key="root" tabs={true} tabBarStyle={{ backgroundColor:'#fcfcfc' }}>
           <Scene key="tab0" title="RN学习" icon={TabBarItem({ title:'RN学习' })}>
             <Scene key="LearningRN" component={LearningRN} title="RN学习" initial={true} />
+            <Scene key="ActivityIndicatorView" component={ActivityIndicatorView} hideTabBar />
           </Scene>
           <Scene key="tab1" title="JS学习" icon={TabBarItem({ title:'111' })}>
             <Scene key="LearingJS" component={LearingJS} title="LearingJS" initial={true} />
