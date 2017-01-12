@@ -14,21 +14,47 @@
 
 @interface DownloadToolManager ()<TYDownloadDelegate>
 
+@property (nonatomic,strong) TYDownloadModel *downloadModel;
+
+@property (nonatomic,copy)RCTResponseSenderBlock callBackDownloading;
+@property (nonatomic,copy)RCTResponseSenderBlock callBackDownloadError;
+@property (nonatomic,copy)RCTResponseSenderBlock callBackDownloadComplete;
+
 @end
 
 @implementation DownloadToolManager
 
-- (instancetype)init{
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(beganDownload:(NSString *)url
+                  path:(NSString*)path
+                  downloading:(RCTResponseSenderBlock)callBackDownloading
+                  complete:(RCTResponseSenderBlock)callBackComplete
+                  error:(RCTResponseSenderBlock)callBackError)
+{
+  _downloadModel = [[TYDownLoadDataManager manager] downLoadingModelForURLString:url];
   
-  self = [super init];
-  if (self) {
-    
+  _callBackDownloading = callBackDownloading;
+  _callBackDownloadError = callBackError;
+  _callBackDownloadComplete = callBackComplete;
+  
+  if (_downloadModel) {
+    NSLog(@"当前的url已经在下载列表中了 url==%@",url);
+    [self startDownlaod];
+    return;
   }
-  return self;
+  
+  _downloadModel = [[TYDownloadModel alloc]initWithURLString:url];
+  TYDownloadProgress *progress = [[TYDownLoadDataManager manager]progessWithDownloadModel:_downloadModel];
+  [self callBackDownloadingProgress:progress];
+  [self startDownlaod];
+}
+- (void)callBackDownloadingProgress:(TYDownloadProgress*)progress{
   
 }
-
-RCT_EXPORT_MODULE();
+- (void)startDownlaod{
+  
+}
 
 
 
