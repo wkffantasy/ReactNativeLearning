@@ -28,6 +28,7 @@ import SVGViews from './Component/Mine/SVGViews';
 import DeviceInfoView from './Component/Mine/GetDeviceInfoView';
 import StorageForAppView from './Component/Mine/StorageForAppView';
 import DownloadDemoView from './Component/Mine/DownloadDemoView';
+import ImageScrollView from './Component/Mine/BannerScrollDemoView';
 
 // common
 import WebTipView from './Common/Component/WebTipView';
@@ -60,6 +61,7 @@ export default class ReactNativeLearning extends Component {
             <Scene key="DeviceInfoView" component={DeviceInfoView} hideTabBar />
             <Scene key="StorageForAppView" component={StorageForAppView} hideTabBar />
             <Scene key="DownloadDemoView" component={DownloadDemoView} hideTabBar />
+            <Scene key="ImageScrollView" component={ImageScrollView} hideTabBar />
 
             <Scene key="WebTipView" component={WebTipView} hideTabBar />
           </Scene>

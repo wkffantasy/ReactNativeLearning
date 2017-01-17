@@ -35,8 +35,13 @@ const dataArray = [
   },
   {
     title:'下载的一个类',
-    introduce:'用OC的下载，桥接到RN上，支持显示下载速度，剩余时间等。封装的一个js的下载tool',
+    introduce:'用OC的下载，桥接到RN上，支持显示下载速度，剩余时间等。封装的一个js的下载tool。待完成',
     key:'DownloadDemoView',
+  },
+  {
+    title:'无限滑动的banner图',
+    introduce:'无限滑动的banner图片，可以一直左滑或者右滑，可以点击。',
+    key:'ImageScrollView',
   },
 ];
 const ds = new ListView.DataSource({

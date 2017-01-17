@@ -5,11 +5,14 @@ import {
   View,
 } from 'react-native';
 
+
 export default class ImageScrollView extends Component {
   static propTypes = {
     imageArray:PropTypes.array.isRequired,
     width:PropTypes.number.isRequired,
     height:PropTypes.number.isRequired,
+    style: View.propTypes.style,
+    onPressImage: PropTypes.func,
   };
   constructor(props) {
     super(props);
