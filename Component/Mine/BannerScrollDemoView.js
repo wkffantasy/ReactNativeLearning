@@ -53,9 +53,20 @@ const imageArray04 = [
 ];
 
 export default class ImageScrollDemoView extends Component {
+
   _clickFirstDemo(index) {
     console.log('_clickFirstDemo index==',index);
   }
+  _clickSecondDemo(index) {
+    console.log('_clickSecondDemo index==',index);
+  }
+  _clickThirdDemo(index) {
+    console.log('_clickThirdDemo index==',index);
+  }
+  _clickFouthDemo(index) {
+    console.log('_clickFouthDemo index==',index);
+  }
+
   render() {
     return (
       <ScrollView style={{ flex: 1 }} >
@@ -65,6 +76,30 @@ export default class ImageScrollDemoView extends Component {
           height={imageH}
           imageArray={imageArray01}
           onPressImage={(index) => { this._clickFirstDemo(index); }}
+        />
+
+        <ImageScrollView
+          style={{ marginTop:20 }}
+          width={imageW}
+          height={imageH}
+          imageArray={imageArray02}
+          onPressImage={(index) => { this._clickSecondDemo(index); }}
+        />
+
+        <ImageScrollView
+          style={{ marginTop:20 }}
+          width={imageW}
+          height={imageH}
+          imageArray={imageArray03}
+          onPressImage={(index) => { this._clickThirdDemo(index); }}
+        />
+
+        <ImageScrollView
+          style={{ marginTop:20 }}
+          width={imageW}
+          height={imageH}
+          imageArray={imageArray04}
+          onPressImage={(index) => { this._clickFouthDemo(index); }}
         />
       </ScrollView>
     );
