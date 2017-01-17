@@ -19,8 +19,7 @@ export default class ImageScrollView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageIndex:0,
-
+      currentIndex:0,
       imageArray:[],
       originImageLength:0,
     };
@@ -89,7 +88,6 @@ export default class ImageScrollView extends Component {
       return;
     }
     const scrollIndex = parseInt(e.nativeEvent.contentOffset.x / (this.props.width));
-    console.log('scrollIndex==',scrollIndex);
     if (scrollIndex === 0) {
       this.scrollView.scrollTo({
         x:this.props.width * (this.state.imageArray.length - 2),
@@ -101,7 +99,21 @@ export default class ImageScrollView extends Component {
         animated:false,
       });
     }
+    console.log('scrollIndex==',scrollIndex);
+
+    let realIndex = 0;
+    if (this.state.originImageLength === 1) {
+      realIndex = 0;
+    } else {
+      realIndex = scrollIndex - 2;
+    }
+    console.log('realIndex ==',realIndex);
+    this.setState({
+      ...this.state,
+      currentIndex:realIndex,
+    });
   }
+
   _renderImagesView() {
     const imageViewArray = [];
     const imageArray = this.state.imageArray;
@@ -118,18 +130,40 @@ export default class ImageScrollView extends Component {
     }
     return imageViewArray;
   }
+  _renderDotsView() {
+    const dotsArray = [];
+    const dotWH = 5;
+    for (let i = 0; i < this.state.originImageLength; i++) {
+      dotsArray.push(
+        <View
+          key={`dota~~${i}`}
+          style={{ width:dotWH,height:dotWH,borderRadius:dotWH / 2,marginLeft:i === 0 ? 0 : 5,backgroundColor:this.state.currentIndex === i ? 'red' : 'white' }}
+        />
+      );
+    }
+    return (
+      <View style={{ justifyContent:'center',alignItems:'center',position:'absolute',bottom:10,left:0,width:this.props.width,height:dotWH }}>
+        <View style={{ flexDirection:'row' }}>
+          {dotsArray}
+        </View>
+      </View>
+    );
+  }
   render() {
     return (
-      <ScrollView
-        ref={ScrollView => (this.scrollView = ScrollView)}
-        horizontal={true}
-        pagingEnabled={true}
-        showsHorizontalScrollIndicator={false}
-        style={[{ width:this.props.width,height:this.props.height },this.props.style]}
-        onMomentumScrollEnd={(e) => { this._onMomentumScrollEnd(e); }}
-      >
-        {this._renderImagesView()}
-      </ScrollView>
+      <View style={[{ width:this.props.width,height:this.props.height },this.props.style]}>
+        <ScrollView
+          ref={ScrollView => (this.scrollView = ScrollView)}
+          horizontal={true}
+          pagingEnabled={true}
+          showsHorizontalScrollIndicator={false}
+          style={{ width:this.props.width,height:this.props.height }}
+          onMomentumScrollEnd={(e) => { this._onMomentumScrollEnd(e); }}
+        >
+          {this._renderImagesView()}
+        </ScrollView>
+        {this._renderDotsView()}
+      </View>
     );
   }
 }
