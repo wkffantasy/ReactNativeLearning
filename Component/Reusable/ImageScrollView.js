@@ -105,7 +105,11 @@ export default class ImageScrollView extends Component {
     if (this.state.originImageLength === 1) {
       realIndex = 0;
     } else {
-      realIndex = scrollIndex - 2;
+      if (scrollIndex === this.state.imageArray.length - 1) {
+        realIndex = 0;
+      } else {
+        realIndex = scrollIndex - 2;
+      }
     }
     console.log('realIndex ==',realIndex);
     this.setState({
