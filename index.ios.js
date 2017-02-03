@@ -42,6 +42,13 @@ const TabBarItem = () => props => (
   );
 
 export default class ReactNativeLearning extends Component {
+  componentWillMount() {
+    console.log('ReactNativeLearning componentWillMount');
+    console.log('process.env.NODE_ENV ==',process.env.NODE_ENV);
+    // development
+    console.log('process.env ==',process.env);
+    console.log('process ==',process);
+  }
   render() {
     return (
       <Router>
