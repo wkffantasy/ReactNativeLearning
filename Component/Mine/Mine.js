@@ -38,6 +38,11 @@ const dataArray = [
     introduce:'用OC的下载，桥接到RN上，支持显示下载速度，剩余时间等。封装的一个js的下载tool',
     key:'DownloadDemoView',
   },
+  {
+    title:'录音',
+    introduce:'用react-native-audio录音的，加了一些自己相加的比如可以转成mp3格式的，可以获取录音的时候音量的大小的功能,更多关于react-native-audio信息在https://github.com/jsierles/react-native-audio',
+    key:'RecordDemoView',
+  },
 ];
 const ds = new ListView.DataSource({
   rowHasChanged :(r1,r2) => r1 !== r2,
