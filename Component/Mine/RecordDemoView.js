@@ -45,9 +45,27 @@ export default class RecordDemoView extends Component {
   }
   _clickBeganRecord() {
     console.log('_clickBeganRecord');
+    if (this.state.recordState === RecordStateBegan || this.state.recordState === RecordStateFinished) {
+      AudioRecorder.startRecording();
+      this.setState({
+        ...this.state,
+        recordState:RecordStateRecording,
+      });
+    } else {
+      console.log('ignore');
+    }
   }
   _clickStopRecord() {
     console.log('_clickStopRecord');
+    if (this.state.recordState === RecordStateRecording) {
+      AudioRecorder.stopRecording();
+      this.setState({
+        ...this.state,
+        recordState:RecordStateFinished,
+      });
+    } else {
+      console.log('ignore');
+    }
   }
   renderButton(text,onPress) {
     return (
