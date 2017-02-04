@@ -15,7 +15,9 @@ import {
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
+
 import { AudioRecorder, AudioUtils } from 'react-native-audio';
+
 import RecordPowerImageView from './RecordPowerImageView';
 
 const audioPath = `${AudioUtils.DocumentDirectoryPath}/test.aac`;
@@ -49,10 +51,12 @@ export default class RecordDemoView extends Component {
     console.log('_BeganRecord');
     if (this.state.recordState === RecordStateBegan || this.state.recordState === RecordStateFinished) {
       // AudioRecorder.startRecording();
+
       this.setState({
         ...this.state,
         recordState:RecordStateRecording,
       });
+      RecordPowerImageView.show();
     } else {
       console.log('ignore');
     }
@@ -61,6 +65,7 @@ export default class RecordDemoView extends Component {
     console.log('_StopRecord');
     if (this.state.recordState === RecordStateRecording) {
       // AudioRecorder.stopRecording();
+      RecordPowerImageView.hide();
       this.setState({
         ...this.state,
         recordState:RecordStateFinished,

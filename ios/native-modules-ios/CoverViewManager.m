@@ -31,4 +31,15 @@ RCT_EXPORT_MODULE()
   return _view;
 }
 
+RCT_EXPORT_METHOD(showCoverView:(RCTResponseSenderBlock)callback) {
+  
+}
+
+RCT_EXPORT_METHOD(hideCoverView) {
+  if (_view != nil) {
+    [_view removeFromSuperview];
+    _view = nil;
+  }
+}
+
 @end

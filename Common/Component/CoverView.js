@@ -1,5 +1,17 @@
 
 
-const { requireNativeComponent } = require('react-native');
+import React, { Component, PropTypes } from 'react';
+import {
+  requireNativeComponent
+ } from 'react-native';
 
-module.exports = requireNativeComponent('CoverView', null);
+const CoverView = requireNativeComponent('CoverView',null);
+
+export default class Cover extends Component {
+
+  render() {
+    return (
+      <CoverView {...this.props} />
+    );
+  }
+}
