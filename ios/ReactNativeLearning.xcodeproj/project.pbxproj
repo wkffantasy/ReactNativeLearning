@@ -34,6 +34,7 @@
 		9A0400AD1E264C01004E6353 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AC1E264C01004E6353 /* ViewController.m */; };
 		9A0400B01E265204004E6353 /* DownloadToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AF1E265204004E6353 /* DownloadToolManager.m */; };
 		9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */; };
+		9ACCB94E1E4576F200E7D325 /* CoverViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB94D1E4576F200E7D325 /* CoverViewManager.m */; };
 		F4583F9E658541CB8E2AF535 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 025DFF9AD3C34F6DB1C5ECC9 /* libRNFS.a */; };
 /* End PBXBuildFile section */
 
@@ -243,6 +244,8 @@
 		9A0400AF1E265204004E6353 /* DownloadToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadToolManager.m; sourceTree = "<group>"; };
 		9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
 		9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
+		9ACCB94C1E4576F200E7D325 /* CoverViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverViewManager.h; sourceTree = "<group>"; };
+		9ACCB94D1E4576F200E7D325 /* CoverViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverViewManager.m; sourceTree = "<group>"; };
 		C105EE7968184A6A9BB57797 /* RNAudio.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAudio.xcodeproj; path = "../node_modules/react-native-audio/ios/RNAudio.xcodeproj"; sourceTree = "<group>"; };
 		CC800AE2B25141B2946856E1 /* libRNAudio.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAudio.a; sourceTree = "<group>"; };
 		D25887406ED146A79CCDF240 /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 				9A0400831E264BB8004E6353 /* Download */,
 				9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */,
 				9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */,
+				9ACCB94C1E4576F200E7D325 /* CoverViewManager.h */,
+				9ACCB94D1E4576F200E7D325 /* CoverViewManager.m */,
 			);
 			path = "native-modules-ios";
 			sourceTree = "<group>";
@@ -866,6 +871,7 @@
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				9A0400A71E264BEE004E6353 /* TYDownLoadDataManager.m in Sources */,
 				9A0400AA1E264BEE004E6353 /* TYDownloadUtility.m in Sources */,
+				9ACCB94E1E4576F200E7D325 /* CoverViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

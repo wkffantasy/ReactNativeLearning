@@ -16,6 +16,8 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 import { AudioRecorder, AudioUtils } from 'react-native-audio';
+import RecordPowerImageView from './RecordPowerImageView';
+
 const audioPath = `${AudioUtils.DocumentDirectoryPath}/test.aac`;
 
 AudioRecorder.prepareRecordingAtPath(audioPath, {
@@ -43,10 +45,10 @@ export default class RecordDemoView extends Component {
     console.log('RecordDemoView componentWillMount');
     console.log('audioPath ==',audioPath);
   }
-  _clickBeganRecord() {
-    console.log('_clickBeganRecord');
+  _BeganRecord() {
+    console.log('_BeganRecord');
     if (this.state.recordState === RecordStateBegan || this.state.recordState === RecordStateFinished) {
-      AudioRecorder.startRecording();
+      // AudioRecorder.startRecording();
       this.setState({
         ...this.state,
         recordState:RecordStateRecording,
@@ -55,10 +57,10 @@ export default class RecordDemoView extends Component {
       console.log('ignore');
     }
   }
-  _clickStopRecord() {
-    console.log('_clickStopRecord');
+  _StopRecord() {
+    console.log('_StopRecord');
     if (this.state.recordState === RecordStateRecording) {
-      AudioRecorder.stopRecording();
+      // AudioRecorder.stopRecording();
       this.setState({
         ...this.state,
         recordState:RecordStateFinished,
@@ -66,6 +68,9 @@ export default class RecordDemoView extends Component {
     } else {
       console.log('ignore');
     }
+  }
+  _clickToPlayRecord() {
+    console.log('_clickToPlayRecord');
   }
   renderButton(text,onPress) {
     return (
@@ -92,8 +97,16 @@ export default class RecordDemoView extends Component {
   render() {
     return (
       <View style={{ flex: 1,marginTop:64,alignItems:'center' }}>
-        {this.renderButton(this._getTextForBeganRecord(),() => this._clickBeganRecord())}
-        {this.renderButton('停止录音',() => this._clickStopRecord())}
+        <TouchableWithoutFeedback
+          delayLongPress={500}
+          onLongPress={() => { this._BeganRecord(); }}
+          onPressOut={() => { this._StopRecord(); }}
+        >
+          <View style={{ width:140,height:40,justifyContent:'center',alignItems:'center',marginTop:20 }}>
+            <Text style={{ color:'#333333',fontSize:16 }}>{`${this._getTextForBeganRecord()}`}</Text>
+          </View>
+        </TouchableWithoutFeedback>
+        {this.renderButton('点击播放',() => this._clickToPlayRecord())}
       </View>
     );
   }
