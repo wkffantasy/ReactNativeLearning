@@ -35,13 +35,18 @@ const dataArray = [
   },
   {
     title:'下载的一个类',
-    introduce:'用OC的下载，桥接到RN上，支持显示下载速度，剩余时间等。封装的一个js的下载tool',
+    introduce:'用OC的下载，桥接到RN上，支持显示下载速度，剩余时间等。封装的一个js的下载tool。待完成',
     key:'DownloadDemoView',
   },
   {
     title:'录音',
     introduce:'用react-native-audio录音的，加了一些自己相加的比如可以转成mp3格式的，可以获取录音的时候音量的大小的功能,更多关于react-native-audio信息在https://github.com/jsierles/react-native-audio',
     key:'RecordDemoView',
+  },
+  {
+    title:'无限滑动的banner图',
+    introduce:'无限滑动的banner图片，可以一直左滑或者右滑，可以点击。',
+    key:'ImageScrollView',
   },
 ];
 const ds = new ListView.DataSource({
