@@ -34,6 +34,7 @@
 		9A0400AD1E264C01004E6353 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AC1E264C01004E6353 /* ViewController.m */; };
 		9A0400B01E265204004E6353 /* DownloadToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AF1E265204004E6353 /* DownloadToolManager.m */; };
 		9A60F6071E496E6700A779E9 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A60F6061E496E6700A779E9 /* libmp3lame.a */; };
+		9A60F6261E49727800A779E9 /* RecordFileToMp3Manger.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A60F6251E49727800A779E9 /* RecordFileToMp3Manger.m */; };
 		9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */; };
 		9ACCB94E1E4576F200E7D325 /* CoverViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB94D1E4576F200E7D325 /* CoverViewManager.m */; };
 		F4583F9E658541CB8E2AF535 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 025DFF9AD3C34F6DB1C5ECC9 /* libRNFS.a */; };
@@ -245,6 +246,8 @@
 		9A0400AF1E265204004E6353 /* DownloadToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadToolManager.m; sourceTree = "<group>"; };
 		9A60F6051E496E6700A779E9 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		9A60F6061E496E6700A779E9 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		9A60F6241E49727800A779E9 /* RecordFileToMp3Manger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordFileToMp3Manger.h; sourceTree = "<group>"; };
+		9A60F6251E49727800A779E9 /* RecordFileToMp3Manger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordFileToMp3Manger.m; sourceTree = "<group>"; };
 		9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
 		9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
 		9ACCB94C1E4576F200E7D325 /* CoverViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverViewManager.h; sourceTree = "<group>"; };
@@ -523,6 +526,8 @@
 				9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */,
 				9ACCB94C1E4576F200E7D325 /* CoverViewManager.h */,
 				9ACCB94D1E4576F200E7D325 /* CoverViewManager.m */,
+				9A60F6241E49727800A779E9 /* RecordFileToMp3Manger.h */,
+				9A60F6251E49727800A779E9 /* RecordFileToMp3Manger.m */,
 			);
 			path = "native-modules-ios";
 			sourceTree = "<group>";
@@ -889,6 +894,7 @@
 				9A0400A61E264BEE004E6353 /* NSURLSession+TYCorrectedResumeData.m in Sources */,
 				9A0400A81E264BEE004E6353 /* TYDownLoadModel.m in Sources */,
 				9A0400B01E265204004E6353 /* DownloadToolManager.m in Sources */,
+				9A60F6261E49727800A779E9 /* RecordFileToMp3Manger.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				9A0400A71E264BEE004E6353 /* TYDownLoadDataManager.m in Sources */,

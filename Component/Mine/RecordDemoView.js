@@ -12,6 +12,7 @@ import {
   TouchableWithoutFeedback,
   Platform,
   Image,
+  NativeModules,
 } from 'react-native';
 
 // import { Actions } from 'react-native-router-flux';
@@ -20,7 +21,9 @@ import { AudioRecorder, AudioUtils } from 'react-native-audio';
 
 import RecordPowerImageView from './RecordPowerImageView';
 
-const audioPath = `${AudioUtils.DocumentDirectoryPath}/test.aac`;
+const audioPath = `${AudioUtils.DocumentDirectoryPath}/test.lpcm`;
+const mp3Path = `${AudioUtils.DocumentDirectoryPath}/test.mp3`;
+const RecordFileToMp3Manger = NativeModules.RecordFileToMp3Manger;
 
 const
   recordImage = require('../Img/toast_microphone.png'),// 83 x 135
@@ -50,6 +53,7 @@ export default class RecordDemoView extends Component {
   componentWillMount() {
     console.log('RecordDemoView componentWillMount');
     console.log('audioPath ==',audioPath);
+    console.log('mp3Path ==',mp3Path);
   }
   _BeganRecord() {
     console.log('_BeganRecord');
@@ -57,8 +61,8 @@ export default class RecordDemoView extends Component {
       AudioRecorder.prepareRecordingAtPath(audioPath, {
         SampleRate: 22050,
         Channels: 1,
-        AudioQuality: 'Low',
-        AudioEncoding: 'aac',
+        AudioQuality: 'High',
+        AudioEncoding: 'lpcm',
         MeteringEnabled:true,
       });
       AudioRecorder.onProgress = (data) => {
@@ -102,16 +106,15 @@ export default class RecordDemoView extends Component {
       console.log('ignore');
     }
   }
-  _clickToPlayRecord() {
-    console.log('_clickToPlayRecord');
-  }
-  renderButton(text,onPress) {
-    return (
-      <TouchableWithoutFeedback onPress={() => { onPress(); }}>
-        <View style={{ width:140,height:40,justifyContent:'center',alignItems:'center',marginTop:20 }}>
-          <Text style={{ color:'#333333',fontSize:16 }}>{`${text}`}</Text>
-        </View>
-      </TouchableWithoutFeedback>
+  _clickToTransform() {
+    console.log('_clickToTransform');
+
+    RecordFileToMp3Manger.beganTransformFilePath(
+      audioPath,
+      mp3Path,
+      // (param) => { console.log('progress param==',param); },
+      (param) => { console.log('finished param==',param); },
+      (error) => { console.log('error ==',error); },
     );
   }
   _getTextForBeganRecord() {
@@ -176,7 +179,11 @@ export default class RecordDemoView extends Component {
             <Text style={{ color:'#333333',fontSize:16 }}>{`${this._getTextForBeganRecord()}`}</Text>
           </View>
         </TouchableWithoutFeedback>
-        {this.renderButton('点击播放',() => this._clickToPlayRecord())}
+        <TouchableWithoutFeedback onPress={() => this._clickToTransform()}>
+          <View style={{ width:140,height:40,justifyContent:'center',alignItems:'center',marginTop:20 }}>
+            <Text style={{ color:'#333333',fontSize:16 }}>{'点击转成mp3'}</Text>
+          </View>
+        </TouchableWithoutFeedback>
         {this._renderImages()}
       </View>
     );
