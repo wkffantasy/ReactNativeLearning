@@ -33,6 +33,7 @@
 		9A0400AA1E264BEE004E6353 /* TYDownloadUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400A51E264BEE004E6353 /* TYDownloadUtility.m */; };
 		9A0400AD1E264C01004E6353 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AC1E264C01004E6353 /* ViewController.m */; };
 		9A0400B01E265204004E6353 /* DownloadToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0400AF1E265204004E6353 /* DownloadToolManager.m */; };
+		9A60F6071E496E6700A779E9 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A60F6061E496E6700A779E9 /* libmp3lame.a */; };
 		9A6C64F01E13E1000053CC5A /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */; };
 		9ACCB94E1E4576F200E7D325 /* CoverViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACCB94D1E4576F200E7D325 /* CoverViewManager.m */; };
 		F4583F9E658541CB8E2AF535 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 025DFF9AD3C34F6DB1C5ECC9 /* libRNFS.a */; };
@@ -242,6 +243,8 @@
 		9A0400AC1E264C01004E6353 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9A0400AE1E265204004E6353 /* DownloadToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadToolManager.h; sourceTree = "<group>"; };
 		9A0400AF1E265204004E6353 /* DownloadToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadToolManager.m; sourceTree = "<group>"; };
+		9A60F6051E496E6700A779E9 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		9A60F6061E496E6700A779E9 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		9A6C64EE1E13E1000053CC5A /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
 		9A6C64EF1E13E1000053CC5A /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
 		9ACCB94C1E4576F200E7D325 /* CoverViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverViewManager.h; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A60F6071E496E6700A779E9 /* libmp3lame.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -365,6 +369,7 @@
 		13B07FAE1A68108700A75B9A /* ReactNativeLearning */ = {
 			isa = PBXGroup;
 			children = (
+				9A60F5ED1E496E3700A779E9 /* Lib */,
 				9A6C64ED1E13E0BA0053CC5A /* native-modules-ios */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -483,6 +488,23 @@
 				9A0400A51E264BEE004E6353 /* TYDownloadUtility.m */,
 			);
 			path = TYDownloadManager;
+			sourceTree = "<group>";
+		};
+		9A60F5ED1E496E3700A779E9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9A60F6041E496E6700A779E9 /* lame */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		9A60F6041E496E6700A779E9 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				9A60F6051E496E6700A779E9 /* lame.h */,
+				9A60F6061E496E6700A779E9 /* libmp3lame.a */,
+			);
+			path = lame;
 			sourceTree = "<group>";
 		};
 		9A6C64D51E13D6B10053CC5A /* Products */ = {
@@ -948,6 +970,10 @@
 				DEVELOPMENT_TEAM = S5ZPFHD286;
 				INFOPLIST_FILE = ReactNativeLearning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Lib/lame",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -966,6 +992,10 @@
 				DEVELOPMENT_TEAM = S5ZPFHD286;
 				INFOPLIST_FILE = ReactNativeLearning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Lib/lame",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
