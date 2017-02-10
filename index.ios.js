@@ -55,15 +55,15 @@ export default class ReactNativeLearning extends Component {
     return (
       <Router>
         <Scene initial key="root" tabs={true} tabBarStyle={{ backgroundColor:'#fcfcfc' }}>
-          <Scene key="tab0" title="RN学习" icon={TabBarItem({ title:'RN学习' })}>
+          <Scene key="tab0" title="RN学习" icon={TabBarItem({ title:'RN学习' })} style={{ marginBottom:49 }}>
             <Scene key="LearningRN" component={LearningRN} title="RN学习" initial={true} />
             <Scene key="ActivityIndicatorView" component={ActivityIndicatorView} hideTabBar />
             <Scene key="ImageLearningView" component={ImageLearningView} hideTabBar />
           </Scene>
-          <Scene key="tab1" title="JS学习" icon={TabBarItem({ title:'111' })}>
+          <Scene key="tab1" title="JS学习" icon={TabBarItem({ title:'111' })} style={{ marginBottom:49 }}>
             <Scene key="LearingJS" component={LearingJS} title="LearingJS" initial={true} />
           </Scene>
-          <Scene key="tab2" title="我的" icon={TabBarItem({ title:'222' })}>
+          <Scene key="tab2" title="我的" icon={TabBarItem({ title:'222' })} style={{ marginBottom:49 }}>
             <Scene key="Mine" component={Mine} title="Mine" initial={true} />
             <Scene key="MarqueeTextDemoView" component={MarqueeTextDemoView} hideTabBar />
             <Scene key="AnimateImagesDemoView" component={AnimateImagesDemoView} hideTabBar />
