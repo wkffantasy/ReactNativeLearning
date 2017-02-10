@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import {
   View,
-  Dimensions,
+  // Dimensions,
   Text,
   TouchableWithoutFeedback,
   Platform,
@@ -19,9 +19,9 @@ import {
 
 import { AudioRecorder, AudioUtils } from 'react-native-audio';
 
-import RecordPowerImageView from './RecordPowerImageView';
+// import RecordPowerImageView from './RecordPowerImageView';
 
-const audioPath = `${AudioUtils.DocumentDirectoryPath}/test.lpcm`;
+const audioPath = `${AudioUtils.DocumentDirectoryPath}/test.caf`;
 const mp3Path = `${AudioUtils.DocumentDirectoryPath}/test.mp3`;
 const RecordFileToMp3Manger = NativeModules.RecordFileToMp3Manger;
 
@@ -40,7 +40,7 @@ const
   RecordStateRecording = 2,
   RecordStateFinished = 3;
 
-const { width:ScreenW, height:ScreenH } = Dimensions.get('window');
+// const { width:ScreenW, height:ScreenH } = Dimensions.get('window');
 
 export default class RecordDemoView extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ export default class RecordDemoView extends Component {
         SampleRate: 22050,
         Channels: 1,
         AudioQuality: 'High',
-        AudioEncoding: 'lpcm',
+        AudioEncoding: 'caf',
         MeteringEnabled:true,
       });
       AudioRecorder.onProgress = (data) => {
@@ -108,7 +108,6 @@ export default class RecordDemoView extends Component {
   }
   _clickToTransform() {
     console.log('_clickToTransform');
-
     RecordFileToMp3Manger.beganTransformFilePath(
       audioPath,
       mp3Path,

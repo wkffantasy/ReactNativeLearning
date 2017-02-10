@@ -14,8 +14,6 @@
 
 RCT_EXPORT_MODULE();
 
-/*
- RCT_EXPORT_METHOD(prepareRecordingAtPath:(NSString *)path sampleRate:(float)sampleRate channels:(nonnull NSNumber *)channels quality:(NSString *)quality encoding:(NSString *)encoding meteringEnabled:(BOOL)meteringEnabled)*/
 
 RCT_EXPORT_METHOD(beganTransformFilePath:(NSString *)filePath
                   destinationPath:(NSString *)mp3Path
